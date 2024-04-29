@@ -1,3 +1,5 @@
+import java.util.Comparator;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Упр.№ 1");
@@ -17,10 +19,8 @@ public class Main {
         int temperature = 25;
         if (temperature < 5)
             System.out.println("На улице холодно, нужно надеть шапку.");
-        if (temperature > 5) {
+        if (!(temperature < 5)) {
             System.out.println("Сегодня тепло, можно идти без шапки.");}
-        else {
-            System.out.println("Вообще, никуда не иди - сиди дома.");}
 
         System.out.println();
         System.out.println("Упр.№ 3");
@@ -42,11 +42,10 @@ public class Main {
 
         System.out.println();
         System.out.println("Упр. № 5");
-        int childAge = 14;
+        int childAge = 11;
         boolean canNotRide = childAge < 5;
-        boolean canRideWithParents = childAge > 5 && childAge < 14;
-        boolean canRideAlone = childAge > 14;
-        boolean droppedOut = childAge == 5 || childAge == 14;
+        boolean canRideWithParents = childAge >= 5 && childAge < 14;
+        boolean canRideAlone = childAge >= 14;
         if (canNotRide) {System.out.println("Если возраст ребенка равен " +childAge+
                 ", то ему нельзя кататься на аттракционе.");}
         else if (canRideWithParents) {
@@ -54,7 +53,6 @@ public class Main {
                     ", то ему можно кататься на аттракционе в сопровождении родителей.");}
         else if (canRideAlone) {System.out.println("Если возраст ребенка равен " +childAge+
                 ", то ему можно кататься на аттракционе без сопровождения взрослого.");}
-        else if (droppedOut) {System.out.println("О тебе забыли");}
 
         System.out.println();
         System.out.println("Упр. № 6");
@@ -81,5 +79,6 @@ public class Main {
         }
         else if (two > three) {System.out.println("Число " +two+ " большее из трёх чисел.");}
         else {System.out.println("Число " +three+ " большее из трёх чисел.");}
+
     }
 }
